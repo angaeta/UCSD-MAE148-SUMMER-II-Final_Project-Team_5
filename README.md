@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏎️ Conditional Autonomous Pit Stop
+#  Conditional Autonomous Pit Stop
 
 ## Team 5 — UCSD MAE 148
 
@@ -12,7 +12,7 @@
 
 ---
 
-# 📸 Final RoboCar
+# Final RoboCar
 
 <!-- DRAG AND DROP YOUR BEST PHOTO OF THE FINISHED ROBOT BELOW -->
 
