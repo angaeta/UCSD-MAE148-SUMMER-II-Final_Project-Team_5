@@ -272,12 +272,6 @@ The lane-detection node identifies the yellow track markers and calculates the l
        /cmd_vel
 ```
 
-### **Autonomous Lane-Following Demonstration**
-
-▶️ **[WATCH AUTONOMOUS TRACK DRIVING VIDEO](PASTE_LANE_VIDEO_LINK_HERE)**
-
----
-
 #  STOP and Resume Behavior
 
 Before implementing the complete conditional pit-stop state machine, the STOP-sign behavior was validated independently.
