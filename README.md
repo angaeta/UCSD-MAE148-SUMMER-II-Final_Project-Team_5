@@ -77,9 +77,9 @@ The project combines:
 
 | Team Member | Major | 
 |---|---|
-| **[Anthony Gaeta]** | [MAE] 
-| **[Nicholas Campos]** | [ECE] 
-| **[Qihao Huang]** | [ECE] 
+| **Anthony Gaeta** | [MAE] 
+| **Nicholas Campos** | [ECE] 
+| **Qihao Huang** | [ECE] 
 
 ### Team 5 — UC San Diego MAE 148
 
