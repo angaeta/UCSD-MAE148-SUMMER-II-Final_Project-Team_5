@@ -304,7 +304,7 @@ The stop manager acts as the final publisher of vehicle commands and prevents th
 
 ### **STOP → 4 Seconds → Resume Demo**
 
-▶️ **[WATCH STOP AND RESUME DEMONSTRATION](PASTE_STOP_VIDEO_LINK_HERE)**
+▶️ **[WATCH STOP AND RESUME DEMONSTRATION](https://youtu.be/hoZTC7xIytY)**
 
 ---
 
@@ -403,25 +403,8 @@ PIT EXIT
 REJOIN
 ```
 
----
 
-# 🏁 Final Conditional Pit-Stop Demonstration
-
-<!-- PUT YOUR BEST PIT STOP IMAGE HERE -->
-
-![Final Pit Stop](PASTE_FINAL_PIT_STOP_IMAGE_HERE)
-
-## **FINAL FULL-SYSTEM DEMONSTRATION**
-
-### ▶️ **[WATCH THE COMPLETE AUTONOMOUS PIT-STOP DEMO](PASTE_FINAL_VIDEO_LINK_HERE)**
-
-The demonstration shows the completed sequence:
-
-**Lane Follow → STOP Detection → Battery Check → Pit Decision → Pit Entry → Stop → Pit Exit → Lane Rejoin → Resume Autonomous Driving**
-
----
-
-# 🔋 Battery Monitoring
+# Battery Monitoring
 
 The vehicle uses the VESC to provide real-time battery-voltage telemetry while retaining motor and steering control.
 
@@ -523,7 +506,7 @@ The project was developed using:
 
 ---
 
-# 📂 Repository Structure
+#  Repository Structure
 
 ```text
 UCSD-MAE148-SUMMER-II-Final_Project-Team_5/
