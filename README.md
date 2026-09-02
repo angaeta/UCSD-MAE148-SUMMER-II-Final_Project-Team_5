@@ -26,7 +26,7 @@
 
 ---
 
-# 📑 Table of Contents
+#  Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Team Members](#-team-members)
@@ -73,7 +73,7 @@ The project combines:
 
 ---
 
-# 👥 Team Members
+#  Team Members
 
 | Team Member | Major | 
 |---|---|
@@ -85,24 +85,24 @@ The project combines:
 
 ---
 
-# 🎯 Project Goals
+#  Project Goals
 
 The objective of this project was to create a RoboCar capable of making an autonomous pit-stop decision based on both **environmental perception** and **vehicle condition**.
 
 ### Core Objectives
 
-- ✅ Autonomous lane following
-- ✅ Real-time STOP-sign detection
-- ✅ Custom YOLO model deployment
-- ✅ Battery-voltage monitoring
-- ✅ Low-battery detection
-- ✅ Conditional decision making
-- ✅ STOP-sign response
-- ✅ Autonomous pit entry
-- ✅ Autonomous pit stop
-- ✅ Pit exit
-- ✅ Lane reacquisition
-- ✅ Resume autonomous driving
+-  Autonomous lane following
+-  Real-time STOP-sign detection
+-  Custom YOLO model deployment
+-  Battery-voltage monitoring
+-  Low-battery detection
+-  Conditional decision making
+-  STOP-sign response
+-  Autonomous pit entry
+-  Autonomous pit stop
+-  Pit exit
+-  Lane reacquisition
+-  Resume autonomous driving
 
 ---
 
