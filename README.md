@@ -246,7 +246,7 @@ Confidence Threshold
 
 ---
 
-# 🛣️ Autonomous Lane Following
+# Autonomous Lane Following
 
 The OAK-D Lite provides RGB imagery for the lane-detection system.
 
@@ -272,25 +272,13 @@ The lane-detection node identifies the yellow track markers and calculates the l
        /cmd_vel
 ```
 
-## Lane Detection Example
-
-<!-- DRAG SCREENSHOT OF GREEN BOXES / LANE CALIBRATION HERE -->
-
-![Lane Detection](PASTE_LANE_DETECTION_IMAGE_HERE)
-
-## Track Driving
-
-<!-- DRAG PHOTO OF CAR ON TRACK HERE -->
-
-![RoboCar Track](PASTE_TRACK_IMAGE_HERE)
-
 ### **Autonomous Lane-Following Demonstration**
 
 ▶️ **[WATCH AUTONOMOUS TRACK DRIVING VIDEO](PASTE_LANE_VIDEO_LINK_HERE)**
 
 ---
 
-# ⛔ STOP and Resume Behavior
+#  STOP and Resume Behavior
 
 Before implementing the complete conditional pit-stop state machine, the STOP-sign behavior was validated independently.
 
@@ -320,19 +308,13 @@ The vehicle successfully demonstrated:
 
 The stop manager acts as the final publisher of vehicle commands and prevents the lane-guidance node from bypassing the stopping logic.
 
-## STOP Demonstration
-
-<!-- DRAG SCREENSHOT OR PHOTO OF THE CAR STOPPED HERE -->
-
-![STOP Demonstration](PASTE_STOP_IMAGE_HERE)
-
 ### **STOP → 4 Seconds → Resume Demo**
 
 ▶️ **[WATCH STOP AND RESUME DEMONSTRATION](PASTE_STOP_VIDEO_LINK_HERE)**
 
 ---
 
-# 🔋 Conditional Pit-Stop Logic
+#  Conditional Pit-Stop Logic
 
 The final project extends the STOP-sign behavior by adding battery condition to the decision.
 
@@ -395,7 +377,7 @@ Continue Driving
 
 ---
 
-## 🔴 Low Battery Scenario
+## Low Battery Scenario
 
 When:
 
@@ -498,7 +480,7 @@ battery_monitor_node
 
 ---
 
-# 🔧 Hardware
+#  Hardware
 
 ## RoboCar Components
 
@@ -512,15 +494,9 @@ battery_monitor_node
 - Wi-Fi adapter
 - UCSD RoboCar chassis
 
-## Hardware Layout
-
-<!-- DRAG YOUR HARDWARE/WIRING PHOTO HERE -->
-
-![Hardware Layout](PASTE_HARDWARE_IMAGE_HERE)
-
 ---
 
-# 💻 Software
+# Software
 
 The project was developed using:
 
@@ -538,7 +514,7 @@ The project was developed using:
 
 ---
 
-# 📡 ROS2 Topics
+# ROS2 Topics
 
 | Topic | Message Type | Purpose |
 |---|---|---|
@@ -587,124 +563,3 @@ UCSD-MAE148-SUMMER-II-Final_Project-Team_5/
 
 ---
 
-# 🧪 Challenges and Solutions
-
-## YOLO Performance
-
-Running neural-network inference on the Raspberry Pi while simultaneously performing autonomous lane following created computational-load concerns.
-
-### Solution
-
-YOLO inference was isolated in its own ROS2 node and throttled to approximately **4 Hz**, allowing the lane-following system to continue operating at a higher rate.
-
----
-
-## STOP-Sign Confidence
-
-A high confidence threshold worked during close-range testing but was less reliable when the physical STOP sign was viewed from realistic track distances and angles.
-
-### Solution
-
-The deployed threshold was tuned to approximately **0.35** while retaining a requirement for **three consecutive detections** to reduce false triggers.
-
----
-
-## VESC Battery Telemetry
-
-Initially, battery monitoring and motor control attempted to access the VESC serial connection independently.
-
-### Solution
-
-The VESC drive node became the single owner of the serial device. Battery voltage is now published through ROS2 and processed by a separate battery-monitor node.
-
----
-
-## Command Routing
-
-The lane-guidance node originally published directly to `/cmd_vel`, which would bypass the STOP/pit logic.
-
-### Solution
-
-Lane guidance was remapped to:
-
-```text
-/lane_cmd_vel
-```
-
-The pit-stop manager receives the lane command and becomes the only final publisher to:
-
-```text
-/cmd_vel
-```
-
----
-
-## Hardware Connectivity
-
-USB and VESC serial communication required careful troubleshooting during integration.
-
-The final system verified the VESC serial connection, camera connection, ROS2 topic flow, and motor response before autonomous track testing.
-
----
-
-# ✅ Final Results
-
-The completed system demonstrates integration of:
-
-- ✅ Autonomous lane detection
-- ✅ Autonomous lane following
-- ✅ YOLO STOP-sign recognition
-- ✅ Multi-frame detection confirmation
-- ✅ STOP and resume control
-- ✅ Real-time battery telemetry
-- ✅ Battery percentage estimation
-- ✅ Low-battery classification
-- ✅ Conditional autonomous decision making
-- ✅ Autonomous pit entry
-- ✅ Autonomous pit stop
-- ✅ Autonomous pit exit
-- ✅ Lane reacquisition
-- ✅ Return to normal autonomous driving
-
----
-
-# 📊 Final Presentation
-
-## Team 5 Final Presentation
-
-📄 **[VIEW FINAL PRESENTATION](PASTE_PRESENTATION_LINK_HERE)**
-
----
-
-# 🎬 Demo Videos
-
-| Demonstration | Link |
-|---|---|
-| 🤖 RoboCar Walkaround | **[Watch](PASTE_LINK)** |
-| 🛑 YOLO STOP Detection | **[Watch](PASTE_LINK)** |
-| 🛣️ Autonomous Lane Following | **[Watch](PASTE_LINK)** |
-| ⛔ STOP → 4 sec → Resume | **[Watch](PASTE_LINK)** |
-| 🔋 Battery Monitoring | **[Watch](PASTE_LINK)** |
-| 🏁 Final Conditional Pit Stop | **[Watch](PASTE_LINK)** |
-
----
-
-# 🙏 Acknowledgments
-
-We would like to thank the **UCSD MAE 148 instructional team** for providing the RoboCar platform, course infrastructure, hardware resources, and technical guidance used throughout this project.
-
----
-
-<div align="center">
-
-# Team 5
-
-### UC San Diego
-
-### MAE 148 — Introduction to Autonomous Vehicles
-
-### Summer Session II 2026
-
-**Conditional Autonomous Pit Stop**
-
-</div>
