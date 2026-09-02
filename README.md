@@ -50,7 +50,7 @@
 
 ---
 
-# 🚀 Project Overview
+# Project Overview
 
 This project implements a **condition-based autonomous pit-stop system** on the UCSD RoboCar platform using ROS2.
 
@@ -106,9 +106,9 @@ The objective of this project was to create a RoboCar capable of making an auton
 
 ---
 
-# 🏆 Key Accomplishments
+#  Key Accomplishments
 
-Team 5 integrated the major perception, decision, and control systems required for a conditional autonomous pit stop.
+Integrated the major perception, decision, and control systems required for a conditional autonomous pit stop.
 
 ### Perception
 
@@ -148,7 +148,7 @@ Team 5 integrated the major perception, decision, and control systems required f
 
 ---
 
-# 🧠 System Architecture
+# System Architecture
 
 ```text
                          OAK-D Lite
@@ -188,25 +188,13 @@ Team 5 integrated the major perception, decision, and control systems required f
 
 ---
 
-# 🎥 Project Demonstrations
+#  Demonstrations
 
 This section documents the major stages of the completed autonomous system.
 
----
+COMPLETE LATER
 
-## 🤖 RoboCar Walkaround
-
-<!-- DRAG ROBOT PHOTO HERE -->
-
-![RoboCar Hardware](PASTE_ROBOT_HARDWARE_IMAGE_HERE)
-
-### **RoboCar Hardware Demonstration**
-
-▶️ **[WATCH ROBOT WALKAROUND VIDEO](PASTE_VIDEO_LINK_HERE)**
-
----
-
-# 🛑 YOLO STOP-Sign Detection
+# YOLO STOP-Sign Detection
 
 A custom YOLO object-detection model was trained to identify the physical STOP sign used as the pit-area marker.
 
@@ -250,14 +238,11 @@ Confidence Threshold
 | Output Topic | `/stop_sign_detected` |
 
 ## YOLO Detection Example
+<img width="1033" height="658" alt="Screenshot 2026-09-01 200038" src="https://github.com/user-attachments/assets/f247c93a-851a-40e4-87a4-a6ed44710c38" />
 
-<!-- DRAG A SCREENSHOT SHOWING YOUR YOLO BOUNDING BOX HERE -->
 
-![YOLO STOP Detection](PASTE_YOLO_SCREENSHOT_HERE)
 
-### **YOLO Detection Demonstration**
-
-▶️ **[WATCH YOLO STOP-SIGN DETECTION DEMO](PASTE_YOLO_VIDEO_LINK_HERE)**
+**[WATCH YOLO STOP-SIGN DETECTION DEMO](https://www.youtube.com/watch?v=bK1lqh1ho3Q)**
 
 ---
 
