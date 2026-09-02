@@ -14,6 +14,7 @@ When the STOP sign is detected:
 
 ## System Architecture
 
+```text
                      OAK-D Lite
                          |
               +----------+----------+
