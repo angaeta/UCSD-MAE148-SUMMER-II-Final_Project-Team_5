@@ -75,8 +75,8 @@ The project combines:
 
 # 👥 Team Members
 
-| Team Member | Major | Project Role |
-|---|---|---|
+| Team Member | Major | 
+|---|---|
 | **[Anthony Gaeta]** | [MAE] 
 | **[Nicholas Campos]** | [ECE] 
 | **[Qihao Huang]** | [ECE] 
