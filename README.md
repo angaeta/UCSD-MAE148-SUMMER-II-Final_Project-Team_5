@@ -26,8 +26,6 @@
 
 ---
 
-#  Table of Contents
-
 # Table of Contents
 
 - [Final RoboCar](#final-robocar)
