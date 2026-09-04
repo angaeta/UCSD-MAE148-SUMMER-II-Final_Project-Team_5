@@ -358,7 +358,7 @@ The battery-monitoring system uses separate low and recovery thresholds to preve
 
 ### Healthy Battery Demo
 
-▶️ **[WATCH HEALTHY BATTERY DEMONSTRATION](PASTE_HEALTHY_BATTERY_VIDEO_LINK_HERE)**
+▶️ **[WATCH HEALTHY BATTERY DEMONSTRATION](https://www.youtube.com/watch?v=omp8wu0ba2c)**
 
 ---
 
@@ -405,10 +405,6 @@ Begin PRE_PIT_STOP
 ```
 
 This fail-safe prevents the RoboCar from making a pit-stop decision using stale or missing battery information.
-
-### Unknown Battery Demo
-
-▶️ **[WATCH UNKNOWN BATTERY DEMONSTRATION](PASTE_UNKNOWN_BATTERY_VIDEO_LINK_HERE)**
 
 ---
 
