@@ -46,7 +46,7 @@
 - [Hardware](#hardware)
 - [Software](#software)
 - [ROS2 Topics](#ros2-topics)
-- [Repository Structure](#repository-structure)
+
 ---
 
 # Project Overview
@@ -494,40 +494,6 @@ The project was developed using:
 | `/battery_percentage` | `std_msgs/msg/Float32` | Estimated state of charge |
 | `/battery_low` | `std_msgs/msg/Bool` | Battery condition |
 | `/cmd_vel` | `geometry_msgs/msg/Twist` | Final motor/steering command |
-
----
-
-#  Repository Structure
-
-```text
-UCSD-MAE148-SUMMER-II-Final_Project-Team_5/
-│
-├── src/
-│   ├── stop_sign_node.py
-│   ├── stop_manager_node.py
-│   ├── battery_monitor_node.py
-│   └── pit_stop_manager_node.py
-│
-├── models/
-│   ├── best.onnx
-│   └── README.md
-│
-├── config/
-│   └── ros_racer_calibration.yaml
-│
-├── media/
-│   ├── robot/
-│   ├── yolo/
-│   ├── lane/
-│   ├── pitstop/
-│   └── demos/
-│
-├── docs/
-│
-├── README.md
-├── LICENSE
-└── .gitignore
-```
 
 ---
 
