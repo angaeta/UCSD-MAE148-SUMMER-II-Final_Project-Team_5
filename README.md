@@ -73,7 +73,9 @@ The project combines:
 #  Team Members
 
  **Anthony Gaeta**  [MAE] 
+ 
  **Nicholas Campos**  [ECE] 
+ 
  **Qihao Huang**  [ECE] 
 
 ### Team 5 — UC San Diego MAE 148
