@@ -355,14 +355,13 @@ NORMAL_DRIVE
 A battery is considered healthy after the filtered battery voltage reaches the recovery threshold. The system uses hysteresis so the battery state does not rapidly switch near the threshold.
 
 ```
-
-### Healthy-Battery Demo
+**## Healthy Battery demo**
 
 ▶️ **[WATCH HEALTHY BATTERY DEMONSTRATION](https://youtu.be/omp8wu0ba2c)**
 
 ---
 
-## Low Battery Scenario
+**## Low Battery Scenario**
 
 When:
 
