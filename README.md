@@ -15,9 +15,8 @@
 # Final RoboCar
 
 <!-- DRAG AND DROP YOUR BEST PHOTO OF THE FINISHED ROBOT BELOW -->
+<img width="4032" height="3024" alt="IMG_3089" src="https://github.com/user-attachments/assets/436350fa-9b8c-4f22-91b9-6ddd26c146b1" />
 
-![Team 5 RoboCar]( <img width="4032" height="3024" alt="IMG_3089" src="https://github.com/user-attachments/assets/55e88c19-820b-4a98-bc77-c1422ad0b3e2" />
-)
 
 <div align="center">
 
