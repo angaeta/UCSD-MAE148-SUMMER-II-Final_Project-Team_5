@@ -352,25 +352,78 @@ Continue Normal Driving
 NORMAL_DRIVE
 ```
 
-A battery is considered healthy after the filtered battery voltage reaches the recovery threshold. The system uses hysteresis so the battery state does not rapidly switch near the threshold.
+A healthy battery state allows the vehicle to continue the lap without entering the pit.
 
-```
-## Healthy Battery demo
+The battery-monitoring system uses separate low and recovery thresholds to prevent rapid switching between battery states near the decision point.
 
-▶️ **[WATCH HEALTHY BATTERY DEMONSTRATION](https://youtu.be/omp8wu0ba2c)**
+### Healthy Battery Demo
+
+▶️ **[WATCH HEALTHY BATTERY DEMONSTRATION](PASTE_HEALTHY_BATTERY_VIDEO_LINK_HERE)**
 
 ---
 
-**## Low Battery Scenario**
+## Unknown Battery Scenario
 
-When:
+If the STOP sign is detected but valid battery telemetry is unavailable, the battery condition is treated as **UNKNOWN**.
+
+Battery telemetry is considered stale if a valid battery status has not been received for approximately **2.5 seconds**.
 
 ```text
 STOP Sign = Detected
-Battery Low = True
+Battery State = UNKNOWN
 ```
 
-the RoboCar initiates the pit-stop sequence.
+The RoboCar enters `WAIT_FOR_BATTERY` and commands **exact zero velocity** while waiting for valid battery information.
+
+```text
+STOP Detected
+      +
+Battery Unknown
+      |
+      v
+WAIT_FOR_BATTERY
+      |
+      v
+Exact Zero Command
+      |
+      v
+Wait for Valid Battery State
+```
+
+Once valid battery information is restored:
+
+```text
+HEALTHY
+   |
+   v
+Resume NORMAL_DRIVE
+
+LOW
+   |
+   v
+Begin PRE_PIT_STOP
+```
+
+This fail-safe prevents the RoboCar from making a pit-stop decision using stale or missing battery information.
+
+### Unknown Battery Demo
+
+▶️ **[WATCH UNKNOWN BATTERY DEMONSTRATION](PASTE_UNKNOWN_BATTERY_VIDEO_LINK_HERE)**
+
+---
+
+## Low Battery Scenario
+
+When a confirmed STOP sign is detected and the battery condition is **LOW**, the RoboCar begins the autonomous pit-stop sequence.
+
+```text
+STOP Sign = Detected
+Battery State = LOW
+```
+
+The low-battery condition is triggered when the filtered battery voltage reaches approximately **15.50 V**.
+
+Before entering the pit, the vehicle performs a full **four-second `PRE_PIT_STOP`**.
 
 ```text
 STOP Detected
@@ -378,28 +431,38 @@ STOP Detected
 Battery Low
       |
       v
-PIT REQUEST
+PRE_PIT_STOP
       |
       v
-PIT ENTRY
+Stop for 4 Seconds
       |
       v
-PIT STOP
+ENTER_PIT
       |
       v
-PIT EXIT
+PIT_DRIVE
       |
       v
-REJOIN
+PIT_DWELL
+      |
+      v
+EXIT_PIT
+      |
+      v
+NORMAL_DRIVE
 ```
 
-### Low-Battery Demo
+During `PRE_PIT_STOP`, the robot commands **exact zero velocity** for the entire four-second stop.
 
-▶️ **[WATCH LOW BATTERY DEMONSTRATION](https://youtu.be/omp8wu0ba2c)**
+Once a legitimate low-battery pit sequence begins, later loss of battery telemetry does **not** cancel the sequence.
+
+The STOP detector must also remain clear continuously for approximately **one second** before it is re-armed for another pit opportunity.
+
+### Low Battery Demo
+
+▶️ **[WATCH LOW BATTERY DEMONSTRATION](PASTE_LOW_BATTERY_VIDEO_LINK_HERE)**
 
 ---
-
-
 # Battery Monitoring
 
 The vehicle uses the VESC to provide real-time battery-voltage telemetry while retaining motor and steering control.
