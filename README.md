@@ -186,14 +186,6 @@ Integrated the major perception, decision, and control systems required for a co
                           Motor + Steering
 ```
 
----
-
-#  Demonstrations
-
-This section documents the major stages of the completed autonomous system.
-
-COMPLETE LATER
-
 # YOLO STOP-Sign Detection
 
 A custom YOLO object-detection model was trained to identify the physical STOP sign used as the pit-area marker.
@@ -345,7 +337,7 @@ The final project extends the STOP-sign behavior by adding battery condition to 
 
 ---
 
-## 🟢 Healthy Battery Scenario
+## Healthy Battery Scenario
 
 When:
 
@@ -367,7 +359,7 @@ Continue Driving
 
 ### Healthy-Battery Demo
 
-▶️ **[WATCH HEALTHY BATTERY DEMONSTRATION](PASTE_VIDEO_LINK_HERE)**
+▶️ **[WATCH HEALTHY BATTERY DEMONSTRATION](https://youtu.be/omp8wu0ba2c)**
 
 ---
 
