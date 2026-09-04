@@ -28,26 +28,25 @@
 
 #  Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Team Members](#-team-members)
-- [Project Goals](#-project-goals)
-- [Key Accomplishments](#-key-accomplishments)
-- [System Architecture](#-system-architecture)
-- [Project Demonstrations](#-project-demonstrations)
-- [YOLO STOP-Sign Detection](#-yolo-stop-sign-detection)
-- [Autonomous Lane Following](#-autonomous-lane-following)
-- [STOP and Resume Behavior](#-stop-and-resume-behavior)
-- [Conditional Pit-Stop Logic](#-conditional-pit-stop-logic)
-- [Battery Monitoring](#-battery-monitoring)
-- [Hardware](#-hardware)
-- [Software](#-software)
-- [ROS2 Topics](#-ros2-topics)
-- [Repository Structure](#-repository-structure)
-- [Challenges and Solutions](#-challenges-and-solutions)
-- [Final Results](#-final-results)
-- [Final Presentation](#-final-presentation)
-- [Acknowledgments](#-acknowledgments)
+# Table of Contents
 
+- [Final RoboCar](#final-robocar)
+- [Project Overview](#project-overview)
+- [Team Members](#team-members)
+- [Project Goals](#project-goals)
+- [Key Accomplishments](#key-accomplishments)
+- [System Architecture](#system-architecture)
+- [YOLO STOP-Sign Detection](#yolo-stop-sign-detection)
+- [Autonomous Lane Following](#autonomous-lane-following)
+- [STOP and Resume Behavior](#stop-and-resume-behavior)
+- [Conditional Pit-Stop Logic](#conditional-pit-stop-logic)
+  - [Healthy Battery Scenario](#healthy-battery-scenario)
+  - [Low Battery Scenario](#low-battery-scenario)
+- [Battery Monitoring](#battery-monitoring)
+- [Hardware](#hardware)
+- [Software](#software)
+- [ROS2 Topics](#ros2-topics)
+- [Repository Structure](#repository-structure)
 ---
 
 # Project Overview
@@ -58,8 +57,8 @@ The RoboCar autonomously follows a marked track using an **OAK-D Lite camera**, 
 
 When the STOP sign is detected:
 
-- 🟢 **Battery healthy:** the RoboCar continues autonomous driving.
-- 🔴 **Battery low:** the RoboCar initiates the autonomous pit-stop sequence.
+-  **Battery healthy:** the RoboCar continues autonomous driving.
+-  **Battery low:** the RoboCar initiates the autonomous pit-stop sequence.
 - 🏁 The vehicle enters the pit area, stops for service, exits the pit, reacquires the lane, and resumes autonomous driving.
 
 The project combines:
