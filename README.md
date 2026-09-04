@@ -392,6 +392,12 @@ PIT EXIT
 REJOIN
 ```
 
+### Low-Battery Demo
+
+▶️ **[WATCH LOW BATTERY DEMONSTRATION](https://youtu.be/omp8wu0ba2c)**
+
+---
+
 
 # Battery Monitoring
 
