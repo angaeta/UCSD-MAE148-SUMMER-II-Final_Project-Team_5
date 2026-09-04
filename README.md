@@ -302,56 +302,43 @@ The stop manager acts as the final publisher of vehicle commands and prevents th
 The final project extends the STOP-sign behavior by adding battery condition to the decision.
 
 ```text
-                    NORMAL DRIVING
-                          |
-                          v
-                  STOP SIGN DETECTED
-                          |
-                          v
-                    CHECK BATTERY
-                     /          \
-                    /            \
-           BATTERY HEALTHY     BATTERY LOW
-                  |                 |
-                  v                 v
-          CONTINUE DRIVING      PIT REQUEST
-                                    |
-                                    v
-                                PIT ENTRY
-                                    |
-                                    v
-                                PIT STOP
-                                    |
-                                    v
-                                PIT EXIT
-                                    |
-                                    v
-                                  REJOIN
-                                    |
-                                    v
-                              NORMAL DRIVING
+NORMAL_DRIVE
+     |
+     | STOP sign detected
+     v
+BATTERY DECISION
+   /       |        \
+HEALTHY  UNKNOWN     LOW
+   |        |         |
+   |        v         v
+   |  WAIT_FOR_BATTERY
+   |    exact zero
+   |                  |
+   |              PRE_PIT_STOP
+   |                  |
+   |              4 second stop
+   |                  |
+   |               ENTER_PIT
+   |                  |
+   |               PIT_DRIVE
+   |                  |
+   |               PIT_DWELL
+   |                  |
+   |                EXIT_PIT
+   |                  |
+   +--------------> NORMAL_DRIVE
 ```
 
 ---
 
 ## Healthy Battery Scenario
 
-When:
-
-```text
-STOP Sign = Detected
-Battery Low = False
-```
-
-The RoboCar does **not** enter the pit and continues autonomous driving.
-
-```text
-STOP Detected
-      +
-Battery Healthy
-      |
-      v
-Continue Driving
+```markdown
+- **Healthy + STOP:** continue normal autonomous driving.
+- **Unknown + STOP:** enter `WAIT_FOR_BATTERY` and command exact zero.
+- **Low + STOP:** begin a full four-second `PRE_PIT_STOP`, then enter the pit sequence.
+- Once a legitimate low-battery pit sequence begins, later loss of battery telemetry does not cancel the sequence.
+- The STOP detector must remain clear for approximately one second before it is re-armed.
 ```
 
 ### Healthy-Battery Demo
@@ -420,15 +407,16 @@ The Team 5 battery-monitor node processes this voltage and publishes:
 
 | Parameter | Value |
 |---|---:|
-| Battery Type | 4S LiPo |
-| Capacity | 3300 mAh |
+| Battery Type | 4S1P LiPo |
+| Capacity | 2200 mAh |
+| Energy | 32.56 Wh |
 | Nominal Voltage | 14.8 V |
-| Full Voltage | ~16.8 V |
-| Low Battery Threshold | 15.0 V |
-| Recovery Threshold | 15.2 V |
+| Low Battery Threshold | 15.50 V |
+| Recovery Threshold | 15.60 V |
 | Moving Average | 5 samples |
+| Battery Status Timeout | 2.5 s |
 
-Hysteresis prevents the battery state from rapidly changing between LOW and HEALTHY when the measured voltage is near the threshold.
+If battery telemetry is unavailable for more than 2.5 seconds, the battery state is treated as **UNKNOWN**. Separate low and recovery thresholds provide hysteresis and prevent rapid switching between battery states.
 
 ## Battery Data Flow
 
