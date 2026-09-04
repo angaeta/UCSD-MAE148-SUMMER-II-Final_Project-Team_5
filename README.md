@@ -39,6 +39,7 @@
 - [STOP and Resume Behavior](#stop-and-resume-behavior)
 - [Conditional Pit-Stop Logic](#conditional-pit-stop-logic)
   - [Healthy Battery Scenario](#healthy-battery-scenario)
+  - [Unknown Battery Scenario](#unknown-battery-scenario)
   - [Low Battery Scenario](#low-battery-scenario)
 - [Battery Monitoring](#battery-monitoring)
 - [Hardware](#hardware)
