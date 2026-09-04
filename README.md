@@ -57,7 +57,7 @@ When the STOP sign is detected:
 
 -  **Battery healthy:** the RoboCar continues autonomous driving.
 -  **Battery low:** the RoboCar initiates the autonomous pit-stop sequence.
-- 🏁 The vehicle enters the pit area, stops for service, exits the pit, reacquires the lane, and resumes autonomous driving.
+-  The vehicle enters the pit area, stops for service, exits the pit, reacquires the lane, and resumes autonomous driving.
 
 The project combines:
 
