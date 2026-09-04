@@ -333,12 +333,27 @@ HEALTHY  UNKNOWN     LOW
 
 ## Healthy Battery Scenario
 
-```markdown
-- **Healthy + STOP:** continue normal autonomous driving.
-- **Unknown + STOP:** enter `WAIT_FOR_BATTERY` and command exact zero.
-- **Low + STOP:** begin a full four-second `PRE_PIT_STOP`, then enter the pit sequence.
-- Once a legitimate low-battery pit sequence begins, later loss of battery telemetry does not cancel the sequence.
-- The STOP detector must remain clear for approximately one second before it is re-armed.
+When a confirmed STOP sign is detected and the battery condition is **HEALTHY**, the RoboCar ignores the pit opportunity and continues normal autonomous driving.
+
+```text
+STOP Sign = Detected
+Battery State = HEALTHY
+```
+
+```text
+STOP Detected
+      +
+Battery Healthy
+      |
+      v
+Continue Normal Driving
+      |
+      v
+NORMAL_DRIVE
+```
+
+A battery is considered healthy after the filtered battery voltage reaches the recovery threshold. The system uses hysteresis so the battery state does not rapidly switch near the threshold.
+
 ```
 
 ### Healthy-Battery Demo
